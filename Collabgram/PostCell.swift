@@ -10,6 +10,8 @@ import UIKit
 
 class PostCell: UITableViewCell {
 
+    @IBOutlet weak var userpostLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

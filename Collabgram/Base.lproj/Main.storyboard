@@ -95,13 +95,44 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="102" id="L5R-8g-Cjg" customClass="PostCell" customModule="Collabgram" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="102"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="359" id="L5R-8g-Cjg" customClass="PostCell" customModule="Collabgram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="359"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L5R-8g-Cjg" id="vmf-dq-5yQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="359"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SpE-Bv-nVY">
+                                                    <rect key="frame" x="15" y="47" width="345" height="274"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsZ-il-A5h">
+                                                    <rect key="frame" x="15" y="11" width="79" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyN-xY-oFG">
+                                                    <rect key="frame" x="15" y="329" width="79" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WyK-Qa-xQS">
+                                                    <rect key="frame" x="102" y="329" width="60" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="usernameLabel" destination="eyN-xY-oFG" id="9Oe-Ik-vuq"/>
+                                            <outlet property="userpostLabel" destination="WyK-Qa-xQS" id="RSw-PV-Khp"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -116,11 +147,7 @@
                         <viewLayoutGuide key="safeArea" id="5Bc-5X-nl4"/>
                     </view>
                     <navigationItem key="navigationItem" id="m2D-VB-Zlr">
-                        <barButtonItem key="rightBarButtonItem" title="Sign Out" id="qho-3I-wZh">
-                            <connections>
-                                <action selector="didTapSignOut:" destination="aEF-Ib-0NK" id="lln-wn-lEe"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Sign Out" image="camera" catalog="system" id="qho-3I-wZh"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="dTo-yD-jAk" id="NY7-qg-2VI"/>
@@ -151,5 +178,6 @@
     </scenes>
     <resources>
         <image name="appstore1" width="915" height="386"/>
+        <image name="camera" catalog="system" width="64" height="48"/>
     </resources>
 </document>
