@@ -11,6 +11,7 @@ import Parse
 
 class SignInViewController: UIViewController {
 
+    let custom = Customfunctions()
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     override func viewDidLoad() {
@@ -20,7 +21,7 @@ class SignInViewController: UIViewController {
 
     @IBAction func onTapSignIn(_ sender: Any) {
         if usernameTextField.text == "" || passwordTextField.text == "" {
-            showAlert(title: "Empty", message: "Please Check Text Field and Try Again")
+            custom.showAlert(title: "Empty", message: "Please Check Text Field and Try Again")
         } else{
             PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (success, error) in
                 if error != nil{
@@ -35,7 +36,7 @@ class SignInViewController: UIViewController {
     }
     @IBAction func onTapSignUp(_ sender: Any) {
         if usernameTextField.text == "" || passwordTextField.text == ""{
-            showAlert(title: "Empty", message: "Please Check Text Field and Try Again")
+            custom.showAlert(title: "Empty", message: "Please Check Text Field and Try Again")
         } else{
             let user = PFUser()
             user.username = usernameTextField.text!
@@ -54,12 +55,6 @@ class SignInViewController: UIViewController {
         
     }
     
-    func showAlert(title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action =  UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(action)
-        present(alert , animated: true, completion: nil)
-        
-    }
+    
 }
 

@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C00EB27F72371D849F95FD11 /* Pods_Collabgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3593B314E3F8A2382F0CC00A /* Pods_Collabgram.framework */; };
+		C0BA577F23B333F8006AA617 /* Customfunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BA577E23B333F8006AA617 /* Customfunctions.swift */; };
 		C0D436FE23B2DC310083D902 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D436FD23B2DC310083D902 /* AppDelegate.swift */; };
 		C0D4370023B2DC310083D902 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D436FF23B2DC310083D902 /* SceneDelegate.swift */; };
 		C0D4370223B2DC310083D902 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4370123B2DC310083D902 /* SignInViewController.swift */; };
@@ -23,6 +24,7 @@
 		3593B314E3F8A2382F0CC00A /* Pods_Collabgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Collabgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7395AB8AD4DB552CD62156 /* Pods-Collabgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collabgram.debug.xcconfig"; path = "Target Support Files/Pods-Collabgram/Pods-Collabgram.debug.xcconfig"; sourceTree = "<group>"; };
 		4C650E38239C964B279200B4 /* Pods-Collabgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collabgram.release.xcconfig"; path = "Target Support Files/Pods-Collabgram/Pods-Collabgram.release.xcconfig"; sourceTree = "<group>"; };
+		C0BA577E23B333F8006AA617 /* Customfunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customfunctions.swift; sourceTree = "<group>"; };
 		C0D436FA23B2DC310083D902 /* Collabgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collabgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D436FD23B2DC310083D902 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0D436FF23B2DC310083D902 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +57,6 @@
 				3B7395AB8AD4DB552CD62156 /* Pods-Collabgram.debug.xcconfig */,
 				4C650E38239C964B279200B4 /* Pods-Collabgram.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -99,6 +100,7 @@
 				C0D4371223B2E8540083D902 /* PostsViewController.swift */,
 				C0D4371423B2E8DB0083D902 /* PostCell.swift */,
 				C0D4371623B2FAD50083D902 /* CameraViewController.swift */,
+				C0BA577E23B333F8006AA617 /* Customfunctions.swift */,
 			);
 			path = Collabgram;
 			sourceTree = "<group>";
@@ -224,6 +226,7 @@
 				C0D4370023B2DC310083D902 /* SceneDelegate.swift in Sources */,
 				C0D4371523B2E8DB0083D902 /* PostCell.swift in Sources */,
 				C0D4371723B2FAD50083D902 /* CameraViewController.swift in Sources */,
+				C0BA577F23B333F8006AA617 /* Customfunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

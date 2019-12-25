@@ -187,6 +187,9 @@
                                     <constraint firstAttribute="width" constant="50" id="OzL-ua-Ngy"/>
                                 </constraints>
                                 <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="onTapPost:" destination="yKZ-w1-kb6" eventType="touchUpInside" id="nMH-dl-W6r"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ucb-Oa-T2R">
                                 <rect key="frame" x="0.0" y="30" width="375" height="327"/>
@@ -229,6 +232,7 @@
                         <viewLayoutGuide key="safeArea" id="6QQ-uX-da3"/>
                     </view>
                     <connections>
+                        <outlet property="captionTextField" destination="89X-cd-sK6" id="g5d-Rw-ify"/>
                         <outlet property="imageView" destination="ucb-Oa-T2R" id="EDV-uS-xk0"/>
                     </connections>
                 </viewController>

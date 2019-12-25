@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Parse
 import AlamofireImage
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var captionTextField: UITextView!
     @IBOutlet weak var imageView: UIImageView!
-    
+    let custom = Customfunctions()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,34 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         present(picker, animated: true, completion: nil)
     }
+    
+    @IBAction func onTapPost(_ sender: Any) {
+        let post = PFObject(className: "Posts")
+        
+        post["caption"] = captionTextField.text!
+        post["author"] = PFUser.current()!
+        
+        if let imageData = imageView.image?.pngData(){
+            let file = PFFileObject(data: imageData)
+            
+            post["image"] = file
+            post.saveInBackground { (success, error) in
+                if error != nil {
+                    print(error as Any)
+                } else{
+                    print("Success")
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        
+        } else{
+            custom.showAlert(title: "No Image", message: "Unfortunately, their is no image in camera")
+        }
+        
+        
+        
+    }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
