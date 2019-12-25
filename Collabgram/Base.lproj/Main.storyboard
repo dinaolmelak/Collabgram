@@ -176,6 +176,9 @@
                                     <constraint firstAttribute="width" constant="48" id="lmT-OK-zvv"/>
                                 </constraints>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onTapCancel:" destination="yKZ-w1-kb6" eventType="touchUpInside" id="9Qr-eo-sZN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqE-rV-dEz">
                                 <rect key="frame" x="325" y="0.0" width="50" height="30"/>
@@ -185,12 +188,16 @@
                                 </constraints>
                                 <state key="normal" title="Post"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ucb-Oa-T2R">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ucb-Oa-T2R">
                                 <rect key="frame" x="0.0" y="30" width="375" height="327"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="327" id="7dc-gN-dNp"/>
                                     <constraint firstAttribute="width" constant="375" id="hrA-1y-WbD"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="vnO-C7-UFX" appends="YES" id="H1b-1B-NcR"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnD-g5-72U">
                                 <rect key="frame" x="16" y="365" width="60" height="21"/>
@@ -221,8 +228,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6QQ-uX-da3"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="ucb-Oa-T2R" id="EDV-uS-xk0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GnY-Jz-ENI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vnO-C7-UFX">
+                    <connections>
+                        <action selector="onTapCamera:" destination="yKZ-w1-kb6" id="OVc-1Y-4Ul"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2752.8000000000002" y="116.49175412293854"/>
         </scene>
