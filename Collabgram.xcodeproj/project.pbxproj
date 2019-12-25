@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C00EB27F72371D849F95FD11 /* Pods_Collabgram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3593B314E3F8A2382F0CC00A /* Pods_Collabgram.framework */; };
 		C0D436FE23B2DC310083D902 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D436FD23B2DC310083D902 /* AppDelegate.swift */; };
 		C0D4370023B2DC310083D902 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D436FF23B2DC310083D902 /* SceneDelegate.swift */; };
 		C0D4370223B2DC310083D902 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4370123B2DC310083D902 /* SignInViewController.swift */; };
@@ -15,9 +16,13 @@
 		C0D4370A23B2DC3A0083D902 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4370823B2DC3A0083D902 /* LaunchScreen.storyboard */; };
 		C0D4371323B2E8540083D902 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4371223B2E8540083D902 /* PostsViewController.swift */; };
 		C0D4371523B2E8DB0083D902 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4371423B2E8DB0083D902 /* PostCell.swift */; };
+		C0D4371723B2FAD50083D902 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4371623B2FAD50083D902 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3593B314E3F8A2382F0CC00A /* Pods_Collabgram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Collabgram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B7395AB8AD4DB552CD62156 /* Pods-Collabgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collabgram.debug.xcconfig"; path = "Target Support Files/Pods-Collabgram/Pods-Collabgram.debug.xcconfig"; sourceTree = "<group>"; };
+		4C650E38239C964B279200B4 /* Pods-Collabgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collabgram.release.xcconfig"; path = "Target Support Files/Pods-Collabgram/Pods-Collabgram.release.xcconfig"; sourceTree = "<group>"; };
 		C0D436FA23B2DC310083D902 /* Collabgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collabgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D436FD23B2DC310083D902 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0D436FF23B2DC310083D902 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +34,7 @@
 		C0D4371123B2E7480083D902 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C0D4371223B2E8540083D902 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		C0D4371423B2E8DB0083D902 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		C0D4371623B2FAD50083D902 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,18 +42,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C00EB27F72371D849F95FD11 /* Pods_Collabgram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19FC32E6696026B3FAE5F24B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B7395AB8AD4DB552CD62156 /* Pods-Collabgram.debug.xcconfig */,
+				4C650E38239C964B279200B4 /* Pods-Collabgram.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5949A32DC4AED044E5A8639A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3593B314E3F8A2382F0CC00A /* Pods_Collabgram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C0D436F123B2DC310083D902 = {
 			isa = PBXGroup;
 			children = (
 				C0D4371123B2E7480083D902 /* README.md */,
 				C0D436FC23B2DC310083D902 /* Collabgram */,
 				C0D436FB23B2DC310083D902 /* Products */,
+				19FC32E6696026B3FAE5F24B /* Pods */,
+				5949A32DC4AED044E5A8639A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +98,7 @@
 				C0D4370B23B2DC3A0083D902 /* Info.plist */,
 				C0D4371223B2E8540083D902 /* PostsViewController.swift */,
 				C0D4371423B2E8DB0083D902 /* PostCell.swift */,
+				C0D4371623B2FAD50083D902 /* CameraViewController.swift */,
 			);
 			path = Collabgram;
 			sourceTree = "<group>";
@@ -82,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C0D4370E23B2DC3A0083D902 /* Build configuration list for PBXNativeTarget "Collabgram" */;
 			buildPhases = (
+				6809CB89A801B600F8682CAF /* [CP] Check Pods Manifest.lock */,
 				C0D436F623B2DC310083D902 /* Sources */,
 				C0D436F723B2DC310083D902 /* Frameworks */,
 				C0D436F823B2DC310083D902 /* Resources */,
+				9D9C36DC160D151A4A361839 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +171,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6809CB89A801B600F8682CAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Collabgram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D9C36DC160D151A4A361839 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Collabgram/Pods-Collabgram-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Collabgram/Pods-Collabgram-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Collabgram/Pods-Collabgram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C0D436F623B2DC310083D902 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -151,6 +223,7 @@
 				C0D436FE23B2DC310083D902 /* AppDelegate.swift in Sources */,
 				C0D4370023B2DC310083D902 /* SceneDelegate.swift in Sources */,
 				C0D4371523B2E8DB0083D902 /* PostCell.swift in Sources */,
+				C0D4371723B2FAD50083D902 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +365,7 @@
 		};
 		C0D4370F23B2DC3A0083D902 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B7395AB8AD4DB552CD62156 /* Pods-Collabgram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,6 +384,7 @@
 		};
 		C0D4371023B2DC3A0083D902 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C650E38239C964B279200B4 /* Pods-Collabgram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignInViewController: UIViewController {
 
@@ -18,13 +19,47 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func onTapSignIn(_ sender: Any) {
-        
+        if usernameTextField.text == "" || passwordTextField.text == "" {
+            showAlert(title: "Empty", message: "Please Check Text Field and Try Again")
+        } else{
+            PFUser.logInWithUsername(inBackground: usernameTextField.text!, password: passwordTextField.text!) { (success, error) in
+                if error != nil{
+                    print("oops!, \(String(describing: error))")
+                }else{
+                    print("Success Signing In!")
+                    self.performSegue(withIdentifier: "LoggedIn", sender: self)
+                }
+            }
+        }
         
     }
     @IBAction func onTapSignUp(_ sender: Any) {
-        
+        if usernameTextField.text == "" || passwordTextField.text == ""{
+            showAlert(title: "Empty", message: "Please Check Text Field and Try Again")
+        } else{
+            let user = PFUser()
+            user.username = usernameTextField.text!
+            user.password = passwordTextField.text!
+            
+            user.signUpInBackground { (success, error) in
+                if error != nil{
+                    print("oops!, \(String(describing: error))")
+                }else{
+                    print("Success Signing UP!")
+                    self.performSegue(withIdentifier: "LoggedIn", sender: self)
+                }
+            }
+            
+        }
         
     }
     
+    func showAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action =  UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert , animated: true, completion: nil)
+        
+    }
 }
 
