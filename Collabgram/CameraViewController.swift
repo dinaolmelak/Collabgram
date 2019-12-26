@@ -48,22 +48,20 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         post["caption"] = captionTextField.text!
         post["author"] = PFUser.current()!
         
-        if let imageData = imageView.image?.pngData(){
-            let file = PFFileObject(data: imageData)
-            
-            post["image"] = file
-            post.saveInBackground { (success, error) in
-                if error != nil {
-                    print(error as Any)
-                } else{
-                    print("Success")
-                    self.dismiss(animated: true, completion: nil)
-                }
-            }
+        let imageData = imageView.image?.pngData()
+        let file = PFFileObject(data: imageData!)
         
-        } else{
-            custom.showAlert(title: "No Image", message: "Unfortunately, their is no image in camera")
+        post["image"] = file
+        post.saveInBackground { (success, error) in
+            if error != nil {
+                print(error as Any)
+            } else{
+                print("Success")
+                self.dismiss(animated: true, completion: nil)
+            }
         }
+        
+        
         
         
         
