@@ -12,7 +12,7 @@ import AlamofireImage
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var captionTextField: UITextView!
+    @IBOutlet weak var captionTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     let custom = Customfunctions()
     

@@ -15,6 +15,7 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     let custom = Customfunctions()
     var posts = [PFObject]()
+    var refresher: UIRefreshControl!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +23,19 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
     DataRequest.addAcceptableImageContentTypes(["application/octet-stream"])
+        refresher = UIRefreshControl()
+        refresher.addTarget(self, action: #selector(getPosts), for: .valueChanged)
+        tableView.insertSubview(refresher, at: 0)
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        getPosts()
+        
+    }
+    
+    @objc func getPosts(){
         let query = PFQuery(className: "Posts")
         query.includeKey("author")
         query.limit = 20
@@ -35,12 +45,13 @@ class PostsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             if posts != nil{
                 self.posts = posts!
                 self.tableView.reloadData()
+                self.refresher.endRefreshing()
             }else{
                 self.custom.showAlert(title: "No Data", message: "Apologies!, but their is no data in database")
             }
         }
-        
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
